@@ -1,4 +1,4 @@
-<!--  Source Code From LAMP Zip File-->
+ <!-- Search Contact -->
 <?php
 
 	$inData = getRequestInfo();
@@ -6,16 +6,17 @@
 	$searchResults = "";
 	$searchCount = 0;
 
-	$conn = new mysqli("localhost", "username", "password", "database"); 
+	$conn = new mysqli("localhost", "Group19", "COP4331_g19", "COP4331"); 	
+
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
 	} 
 	else
 	{
-		$stmt = $conn->prepare("select Name from Colors where Name like ? and UserID=?");
-		$colorName = "%" . $inData["search"] . "%";
-		$stmt->bind_param("ss", $colorName, $inData["userId"]);
+		$stmt = $conn->prepare("SELECT FirstName, LastName, Phone, Email, UserID FROM Contacts WHERE FirstName LIKE ? AND UserID=?");
+		$firstName = "%" . $inData["firstName"] . "%";
+		$stmt->bind_param("ss", $firstName, $inData["userID"]);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
@@ -27,12 +28,15 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"' . $row["Name"] . '"';
+			$searchResults .= '"' . $row["FirstName"] . '",';
+			$searchResults .= '"' . $row["LastName"] . '",';
+			$searchResults .= '"' . $row["Phone"] . '",';
+			$searchResults .= '"' . $row["Email"] . '",';
 		}
 		
 		if( $searchCount == 0 )
 		{
-			returnWithError( "No Records Found" );
+			returnWithError( "No Contacts Found" );
 		}
 		else
 		{
