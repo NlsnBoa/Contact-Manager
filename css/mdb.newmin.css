@@ -1,0 +1,40 @@
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #fccb90;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    #ee7724,
+    #d8363a,
+    #dd3675,
+    #b44593
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+  .gradient-form {
+    height: 100vh !important;
+  }
+}
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
+}
+
+/* Gif background */
+.gif-background {
+  flex: 1;
+  background-image: url("../img/frontend_livepicture1.gif"); /* Set the GIF as the background image */
+  background-size: cover; /* Cover the entire element */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center;
+  /* Other styles for the element */
+
+  /* Add any other styles you want for the element */
+}
