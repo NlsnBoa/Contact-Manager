@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Files -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/loginform.css" />
+
+    <!-- JS  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1c8222ee2c.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon3.ico" type="image/x-icon" />
+
+    <!-- Title -->
+    <title>Contact Manager</title>
+  </head>
+
+  <body>
+    <!-- The body content -->
+
+    <div class="box">
+      <div class="text-center">
+        <img src="./img/ufc_icon.png" alt="logo" style="width: 185px" />
+        <h4>We are Group 19</h4>
+      </div>
+
+      <form action="/login.php" method="post" style="padding: 50px">
+        <p style="padding-left: 14px">Please log in your account</p>
+
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <br />
+          <input
+            type="text"
+            placeholder="Enter Username"
+            name="uname"
+            required
+          />
+          <br />
+          <label for="psw" style="padding-top: 20px"><b>Password</b></label>
+          <br />
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            required
+          />
+
+          <button type="submit">Login</button>
+          <br />
+          <a href="#">Forgot password?</a>
+
+          <div>
+            <p>Don't have an account?</p>
+            <a href="#">Create one</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

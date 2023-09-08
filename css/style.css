@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/astronaut_background.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.bs-example {
+  margin-top: 15%;
+}
+
+.titletext {
+  color: white;
+  font-size: large;
+}
+
+@media (max-width: 600px) {
+  .bs-example {
+    margin-top: 50vw;
+  }
+}

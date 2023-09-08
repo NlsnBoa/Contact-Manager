@@ -1,0 +1,26 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-image: url("../img/astronaut_background.gif");
+  background-size: 150%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 90% 80%;
+}
+
+.box {
+  box-sizing: border-box;
+  margin-left: 50%;
+  height: 100%;
+  background-color: hsl(0, 0%, 100%, 50%);
+}
+
+.text-center {
+  padding: 50px 0;
+  text-align: center;
+}
