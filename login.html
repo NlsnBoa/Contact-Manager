@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/loginform.css" />
 
     <!-- JS  -->
+    <script src="./js/code.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script
@@ -61,7 +62,6 @@
         <h4>We are Group 19</h4>
       </div>
 
-      <form action="http://galacticrolodex.com/LAMPAPI/Login.php" method="post" style="padding: 50px">
         <p style="padding-left: 14px">Please log in your account</p>
 
         <div class="container">
@@ -69,6 +69,7 @@
           <br />
           <input
             type="text"
+            id = "loginName"
             placeholder="Enter Username"
             name="login"
             required
@@ -78,12 +79,14 @@
           <br />
           <input
             type="password"
+            id = "loginPassword"
             placeholder="Enter Password"
             name="password"
             required
           />
 
-          <button type="submit">Log in</button>
+          <button type="button" onclick="doLogin()">Log in</button>
+          <span class="text" id="loginResult"></span>
           <br />
           <a href="#">Forgot password?</a>
 

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/registerform.css" />
 
     <!-- JS  -->
+    <script src="./js/code.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script
@@ -62,7 +63,6 @@
         <h4>We are Group 19</h4>
       </div>
 
-      <form action="http://galacticrolodex.com/LAMPAPI/Register.php" method="post" style="padding: 50px"> <!--Should I change to register.php here?-->
         <p style="padding-left: 14px">Create a new account</p>
 
         <div class="container">
@@ -70,6 +70,7 @@
             <br />
             <input
             type="text"
+            id="firstName"
             placeholder="Enter First Name"
             name="firstname"
             required
@@ -79,6 +80,7 @@
             <br />
             <input
             type="text"
+            id="lastName"
             placeholder="Enter Last Name"
             name="lastname"
             required
@@ -88,6 +90,7 @@
             <br />
             <input
             type="text"
+            id="loginName"
             placeholder="Enter Username"
             name="login"
             required
@@ -97,12 +100,14 @@
             <br />
             <input
             type="password"
+            id="loginPassword"
             placeholder="Enter Password"
             name="password"
             required
             />
 
-            <button type="submit">Sign up</button>
+            <button type="submit" onclick="doRegister()">Sign up</button>
+            <span class="text" id="loginResult"></span>
             <br />
 
             <div>
