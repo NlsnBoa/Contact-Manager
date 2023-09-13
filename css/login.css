@@ -3,10 +3,11 @@ html {
   padding: 0;
   margin: 0;
   height: 100%;
+  width: 100%;
 }
 
 body {
-  background-image: url("../img/astronaut_background.gif");
+  background-image: url("../images/astronaut_background.gif");
   background-size: 150%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -23,4 +24,14 @@ body {
 .text-center {
   padding: 50px 0;
   text-align: center;
+}
+
+/* Fix margin issue with nav bar */
+.navbar {
+  margin-bottom: 0;
+}
+
+/* Fix horizontal scroll issue */
+* {
+  overflow-x: hidden;
 }

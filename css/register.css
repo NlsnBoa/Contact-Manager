@@ -24,3 +24,13 @@ body {
   padding: 50px 0;
   text-align: center;
 }
+
+/* Fix margin issue with nav bar */
+.navbar {
+  margin-bottom: 0;
+}
+
+/* Fix horizontal scroll issue */
+* {
+  overflow-x: hidden;
+}
