@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/loginform.css" />
 
     <!-- JS  -->
+    <script src="./js/code.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script
@@ -61,29 +62,31 @@
         <h4>We are Group 19</h4>
       </div>
 
-      <form action="/login.php" method="post" style="padding: 50px">
         <p style="padding-left: 14px">Please log in your account</p>
 
         <div class="container">
-          <label for="uname"><b>Username</b></label>
+          <label for="login"><b>Username</b></label>
           <br />
           <input
             type="text"
+            id = "loginName"
             placeholder="Enter Username"
-            name="uname"
+            name="login"
             required
           />
           <br />
-          <label for="psw" style="padding-top: 20px"><b>Password</b></label>
+          <label for="password" style="padding-top: 20px"><b>Password</b></label>
           <br />
           <input
             type="password"
+            id = "loginPassword"
             placeholder="Enter Password"
-            name="psw"
+            name="password"
             required
           />
 
-          <button type="submit">Log in</button>
+          <button type="button" onclick="doLogin()">Log in</button>
+          <span class="text" id="loginResult"></span>
           <br />
           <a href="#">Forgot password?</a>
 

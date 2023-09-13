@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/registerform.css" />
 
     <!-- JS  -->
+    <script src="./js/code.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script
@@ -62,47 +63,51 @@
         <h4>We are Group 19</h4>
       </div>
 
-      <form action="/register.php" method="post" style="padding: 50px"> <!--Should I change to register.php here?-->
         <p style="padding-left: 14px">Create a new account</p>
 
         <div class="container">
-            <label for="fname"><b>First Name</b></label>
+            <label for="firstname"><b>First Name</b></label>
             <br />
             <input
             type="text"
+            id="firstName"
             placeholder="Enter First Name"
-            name="fname"
+            name="firstname"
             required
             />
             <br />
-            <label for="lname" style="padding-top: 20px"><b>Last Name</b></label>
+            <label for="lastname" style="padding-top: 20px"><b>Last Name</b></label>
             <br />
             <input
             type="text"
+            id="lastName"
             placeholder="Enter Last Name"
-            name="lname"
+            name="lastname"
             required
             />
             <br />
-            <label for="uname" style="padding-top: 20px"><b>Username</b></label>
+            <label for="login" style="padding-top: 20px"><b>Username</b></label>
             <br />
             <input
             type="text"
+            id="loginName"
             placeholder="Enter Username"
-            name="uname"
+            name="login"
             required
             />
             <br />
-            <label for="psw" style="padding-top: 20px"><b>Password</b></label>
+            <label for="password" style="padding-top: 20px"><b>Password</b></label>
             <br />
             <input
             type="password"
+            id="loginPassword"
             placeholder="Enter Password"
-            name="psw"
+            name="password"
             required
             />
 
-            <button type="submit">Sign up</button>
+            <button type="submit" onclick="doRegister()">Sign up</button>
+            <span class="text" id="loginResult"></span>
             <br />
 
             <div>
