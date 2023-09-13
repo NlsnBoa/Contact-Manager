@@ -21,10 +21,13 @@ function doLogin() {
   let jsonPayload = JSON.stringify(tmp);
 
   let url = urlBase + "LAMPAPI/Login." + extension;
-
+  console.log(url);
+  
+  
   let xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  
   try {
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
@@ -43,6 +46,46 @@ function doLogin() {
         saveCookie();
 
         window.location.href = "contactpage.html";
+      }
+    };
+    xhr.send(jsonPayload);
+  } catch (err) {
+    document.getElementById("loginResult").innerHTML = err.message;
+  }
+}
+
+function doRegister() {
+  error = "";
+  
+  let firstname = document.getElementById("firstName").value;
+  let lastname = document.getElementById("lastName").value;
+  let login = document.getElementById("loginName").value;
+  let password = document.getElementById("loginPassword").value;
+  
+  document.getElementById("loginResult").innerHTML = "";
+  
+  let tmp = { firstname: firstname, lastname: lastname, login: login, password: password };
+  let jsonPayload = JSON.stringify(tmp);
+  
+  let url = urlBase + "LAMPAPI/Register." + extension;
+  
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  
+  try {
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        let jsonObject = JSON.parse(xhr.responseText);
+        error = jsonObject.error;
+
+        if (error == "User already exists") {
+          document.getElementById("loginResult").innerHTML =
+            "User already exists";
+          return;
+        }
+
+        window.location.href = "login.html";
       }
     };
     xhr.send(jsonPayload);
