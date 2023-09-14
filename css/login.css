@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background-image: url("../images/astronaut_background.gif");
+  background-image: url("../images/astronaut.png");
   background-size: 150%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -15,15 +15,34 @@ body {
 }
 
 .box {
-  box-sizing: border-box;
+  box-sizing: content-box;
   margin-left: 50%;
   height: 100%;
-  background-color: hsl(0, 0%, 100%, 50%);
+  background-color: hsl(0, 0%, 100%, 70%);
 }
 
 .text-center {
   padding: 50px 0;
   text-align: center;
+}
+
+.heading-sentence {
+  color: #000;
+  font-family: Jomolhari;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.login-to-your-account-sentece {
+  color: #000;
+  font-family: Jomolhari;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 25%;
 }
 
 /* Fix margin issue with nav bar */
