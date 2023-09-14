@@ -31,7 +31,7 @@
 
   <body>
     <!-- The body content -->
-        <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <button
@@ -56,64 +56,69 @@
         </div>
       </div>
     </nav>
-    
+
     <div class="box">
       <div class="text-center">
         <img src="./images/ufc_icon.png" alt="logo" style="width: 185px" />
         <h4>We are Group 19</h4>
       </div>
 
+      <form>
         <p style="padding-left: 14px">Create a new account</p>
 
         <div class="container">
-            <label for="firstname"><b>First Name</b></label>
-            <br />
-            <input
+          <label for="firstname"><b>First Name</b></label>
+          <br />
+          <input
             type="text"
             id="firstName"
             placeholder="Enter First Name"
             name="firstname"
             required
-            />
-            <br />
-            <label for="lastname" style="padding-top: 20px"><b>Last Name</b></label>
-            <br />
-            <input
+          />
+          <br />
+          <label for="lastname" style="padding-top: 20px"
+            ><b>Last Name</b></label
+          >
+          <br />
+          <input
             type="text"
             id="lastName"
             placeholder="Enter Last Name"
             name="lastname"
             required
-            />
-            <br />
-            <label for="login" style="padding-top: 20px"><b>Username</b></label>
-            <br />
-            <input
+          />
+          <br />
+          <label for="login" style="padding-top: 20px"><b>Username</b></label>
+          <br />
+          <input
             type="text"
             id="loginName"
             placeholder="Enter Username"
             name="login"
             required
-            />
-            <br />
-            <label for="password" style="padding-top: 20px"><b>Password</b></label>
-            <br />
-            <input
+          />
+          <br />
+          <label for="password" style="padding-top: 20px"
+            ><b>Password</b></label
+          >
+          <br />
+          <input
             type="password"
             id="loginPassword"
             placeholder="Enter Password"
             name="password"
             required
-            />
+          />
 
-            <button type="submit" onclick="doRegister()">Sign up</button>
-            <span class="text" id="loginResult"></span>
-            <br />
+          <button type="submit" onclick="doRegister()">Sign up</button>
+          <span class="text" id="loginResult"></span>
+          <br />
 
-            <div>
+          <div>
             <p>Have an account?</p>
             <a href="./login.html">Log in</a>
-            </div>
+          </div>
         </div>
       </form>
     </div>
