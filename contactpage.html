@@ -14,20 +14,29 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Greetings {First Name, Last Name}!</h1>
     <div class="container">
-      <div class="search-bar">
-      </div>
+      <h1>Greetings {First Name, Last Name}!</h1>
+      <div class="search-bar"></div>
+      
       <div class="contacts-box">
-        <h2>Contacts</h2>
-        <table>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Phone Number</th>
-          <th>Email</th>
-          <div id="searchResults"></div>
-        </table>
+          <h2>Contacts</h2>
+
+          <div id="button-container">
+            <button id="delete-button">Delete</button>
+            <button id="update-button">Update</button>
+          </div>
+          
+          <div id="result-container"></div> 
+  
+          <script>
+            document.addEventListener('DOMContentLoaded', function() 
+            {
+              doSearch();
+            });
+          </script> 
+
       </div>
+
     </div>
   </body>
 </html>
