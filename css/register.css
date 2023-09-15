@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background-image: url("../img/astronaut_background.gif");
+  background-image: url("../images/astronaut.png");
   background-size: 150%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -23,6 +23,25 @@ body {
 .text-center {
   padding: 50px 0;
   text-align: center;
+}
+
+.heading-sentence {
+  color: #000;
+  font-family: Jomolhari;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.create-a-new-acc-sentece {
+  color: #000;
+  font-family: Jomolhari;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 36%;
 }
 
 /* Fix margin issue with nav bar */

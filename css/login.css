@@ -18,7 +18,7 @@ body {
   box-sizing: content-box;
   margin-left: 50%;
   height: 100%;
-  background-color: hsl(0, 0%, 100%, 70%);
+  background-color: hsl(0, 0%, 100%, 50%);
 }
 
 .text-center {
@@ -42,7 +42,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-left: 25%;
+  padding-left: 36%;
 }
 
 /* Fix margin issue with nav bar */
