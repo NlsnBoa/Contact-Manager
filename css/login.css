@@ -4,6 +4,8 @@ html {
   margin: 0;
   height: 100%;
   width: 100%;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: medium;
 }
 
 body {
@@ -28,7 +30,6 @@ body {
 
 .heading-sentence {
   color: #000;
-  font-family: Jomolhari;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -37,12 +38,10 @@ body {
 
 .login-to-your-account-sentece {
   color: #000;
-  font-family: Jomolhari;
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
-  padding-left: 36%;
+  padding-left: 33%;
 }
 
 /* Fix margin issue with nav bar */
