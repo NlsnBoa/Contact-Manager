@@ -3,6 +3,8 @@ html {
   padding: 0;
   margin: 0;
   height: 100%;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: medium;
 }
 
 body {
@@ -52,15 +54,13 @@ body {
   font-size: 16pt;
 }
 
-.grid-photo img{
+.grid-photo img {
   max-width: 200px;
   max-height: 200px;
-  
 }
-.grid-photo img:hover{
-  color: #111; 
+.grid-photo img:hover {
+  color: #111;
   background-color: rgba(24, 123, 204, 0.3);
-  box-shadow: 0 0 100px rgb(133, 195, 245); 
+  box-shadow: 0 0 100px rgb(133, 195, 245);
   border-radius: 50%;
-  
 }
