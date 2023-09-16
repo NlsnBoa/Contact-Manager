@@ -1,210 +1,201 @@
 /* MAIN LARGE OBJECTS STYLING */
 body {
-    background-image: url("../images/tempbackground1.jpg");
+  background-image: url("../images/tempbackground1.jpg");
 }
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* Comment out height for positioning log out btn */
+  /* height: 100vh; */
+  flex-direction: column;
 }
 
-
-
-
+/* LOG OUT BUTTON STYLING */
+.log-out-btn {
+  text-decoration: none;
+  align-self: flex-end;
+  margin-right: 30px;
+  font-size: 17px;
+  color: white;
+  padding: 10px 20px;
+  background-color: black;
+  border-radius: 30px;
+}
 
 /* CONTACTS BOX STYLING */
 .contacts-box {
-    background-color: white;
-    margin: 10;
-    align-self: center;
-    justify-content: center;
-    text-align: center;
-    width: 80%;
-    padding: 10px;
-    border-radius: 10px;
+  background-color: white;
+  margin: 10;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
 }
 .contacts-box-header {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px;
 }
-
-
-
-
 
 /* TEXT STYLING */
 h1 {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-family: "Lexend Deca","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 h2 {
-    font-family: "Lexend Deca","Helvetica Neue",Helvetica,Arial,sans-serif;
-    text-align: center;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 p {
-    font-family: "Lexend Deca","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 form {
-    text-align: left;
-    margin-right: 25px;
+  text-align: left;
+  margin-right: 25px;
 }
 label {
-    font-family: "Lexend Deca","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 input[type="text"] {
-    font-family: "Lexend Deca","Helvetica Neue",Helvetica,Arial,sans-serif;
-    width: 80%;
-    height: 25px;
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 15px;
-    border-color: rgb(142, 142, 142);
-    border-width: 1px;
-    margin: 5px;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 80%;
+  height: 25px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 15px;
+  border-color: rgb(142, 142, 142);
+  border-width: 1px;
+  margin: 5px;
 }
-
-
-
-
 
 /* SEARCH BAR STYLING */
 .search-bar {
-    display: flex;
-    align-items: center;
-    padding: 2px;
-    width: 400px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  width: 400px;
 }
 .search-input {
-    outline: none;
-    font-size: 16px;
-    border-width: 1px;
-    border-radius: 25px;
+  outline: none;
+  font-size: 16px;
+  border-width: 1px;
+  border-radius: 25px;
 }
 .search-button {
-    background-color: #007bff;
-    background-image: url("../images/search.png");
-    color: #fff;
-    border: none;
-    height: 40px;
-    width: 40px;
-    border-radius: 20px;
-    padding: 5px;
-    margin-left: 10px;
-    cursor: pointer;
-    background-size: 25px 25px;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-color: #007bff;
+  background-image: url("../images/search.png");
+  color: #fff;
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  padding: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .search-button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
-
-
-
-
 
 /* MODIFYING BUTTON STYLING */
 .modifying-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 25px;
-    font-size: 16px;
-    font-family: "Lexend Deca","Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 16px;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .modifying-button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
-
-
-
-
 
 /* MODAL STYLING */
 .modal {
-    display: flex;
-    position: fixed;
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    width: 35%; 
-    border-radius: 15px;
-    justify-content: center;
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  width: 35%;
+  border-radius: 15px;
+  justify-content: center;
 }
 .close {
-    color: #ffffff;
-    float: right;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: #ff2b2b;
-    border: none;
-    border-radius: 20px;
-    width: 40px;
-    height: 40px;
+  color: #ffffff;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ff2b2b;
+  border: none;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
 }
 .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-} 
-
-
-
-
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
 
 /* CONTACTS TABLE STYLING */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 15px;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 15px;
 }
-th, td {
-    padding: 10px;
-    text-align: left;
-    font-family: "Lexend Deca","Helvetica Neue",Helvetica,Arial,sans-serif;
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 th {
-    background-color: rgb(33, 151, 255);
-    color: white;
+  background-color: rgb(33, 151, 255);
+  color: white;
 }
 td {
-    border-bottom: solid;
-    border-color: #e9e9e9;
+  border-bottom: solid;
+  border-color: #e9e9e9;
 }
 tr:nth-child(even) {
-    background-color: #ffffff;
-    width:min-content;
+  background-color: #ffffff;
+  width: min-content;
 }
 tr:hover {
-    background-color: #a5dfff;
+  background-color: #a5dfff;
 }
-.delete-button, .update-button {
-    align-self: center;
-    justify-self: center;
+.delete-button,
+.update-button {
+  align-self: center;
+  justify-self: center;
 }
 .update-button {
-    margin-left: 10%;
+  margin-left: 10%;
 }
