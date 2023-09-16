@@ -52,3 +52,16 @@ body {
 * {
   overflow-x: hidden;
 }
+
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 50%;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+

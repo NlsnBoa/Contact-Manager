@@ -3,6 +3,10 @@ html {
   padding: 0;
   margin: 0;
   height: 100%;
+<<<<<<< HEAD
+=======
+  width: 100%;
+>>>>>>> 0a5db9a14c98e572b397cb99639423e8f831bd4d
   font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: medium;
 }
