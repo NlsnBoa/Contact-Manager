@@ -22,8 +22,8 @@
 
   <body>
     <div class="container">
+      <button class="log-out-btn" onclick="doLogout();" >Log out</button>
       <h1 id="userName"></h1>
-      <a href="index.html" class="log-out-btn" >Log out</a>
       <div class="contacts-box">
         <div class="contacts-box-header">
           <div class="search-bar">
@@ -42,7 +42,7 @@
 
           <div id="overlay" class="overlay"></div>
 
-          <div id="myModal" class="modal">
+          <div id="myModal" class="modal" style="display: none">
             <div class="modal-content">
               <button class="close" onclick="closeCreatePopup()">X</button>
 
@@ -79,7 +79,7 @@
 
         <div id="result-container"></div>
 
-        <div id="UpdateModal" class="modal">
+        <div id="UpdateModal" class="modal" style="display: none">
           <div class="modal-content">
             <button class="close" onclick="closeUpdatePopup()">X</button>
 
