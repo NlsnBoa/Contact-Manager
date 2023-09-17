@@ -240,6 +240,22 @@ function createTable(data) {
           updateButton.style.opacity = "0";
         });
 
+        // Hover event listeners make buttons darker when selected
+        deleteButton.addEventListener("mouseenter", () => {
+          updateButton.style.opacity = "0.2";
+        });
+        updateButton.addEventListener("mouseenter", () => {
+          deleteButton.style.opacity = "0.2";
+        });
+        deleteButton.addEventListener("mouseleave", () => {
+          deleteButton.style.opacity = "1";
+          updateButton.style.opacity = "1";
+        });
+        updateButton.addEventListener("mouseleave", () => {
+          deleteButton.style.opacity = "1";
+          updateButton.style.opacity = "1";
+        });
+      
         row.appendChild(deleteButton);
         row.appendChild(updateButton);
       });
