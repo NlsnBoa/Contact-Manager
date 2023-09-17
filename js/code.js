@@ -14,22 +14,21 @@ function doLogin() {
 
   let login = document.getElementById("loginName").value;
   let password = document.getElementById("loginPassword").value;
-  var hash = md5( password );
+  var hash = md5(password);
 
   document.getElementById("loginResult").innerHTML = "";
 
   // let tmp = { login: login, password: password };
-  var tmp = {login:login,password:hash};
+  var tmp = { login: login, password: hash };
   let jsonPayload = JSON.stringify(tmp);
 
   let url = urlBase + "LAMPAPI/Login." + extension;
   console.log(url);
-  
-  
+
   let xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-  
+
   try {
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
@@ -59,25 +58,30 @@ function doLogin() {
 // Post request to Register API
 function doRegister() {
   error = "";
-  
+
   let firstname = document.getElementById("firstName").value;
   let lastname = document.getElementById("lastName").value;
   let login = document.getElementById("loginName").value;
   let password = document.getElementById("loginPassword").value;
-  
+
   document.getElementById("loginResult").innerHTML = "";
-  
+
   var hash = md5(password);
-  
-  let tmp = { firstname: firstname, lastname: lastname, login: login, password: hash };
+
+  let tmp = {
+    firstname: firstname,
+    lastname: lastname,
+    login: login,
+    password: hash,
+  };
   let jsonPayload = JSON.stringify(tmp);
-  
+
   let url = urlBase + "LAMPAPI/Register." + extension;
-  
+
   let xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-  
+
   try {
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
@@ -139,114 +143,114 @@ function readCookie() {
 }
 
 function fetchContacts() {
-  const endpointUrl = 'http://galacticrolodex.com/LAMPAPI/SearchContact.php';
+  const endpointUrl = "http://galacticrolodex.com/LAMPAPI/SearchContact.php";
 
   const inData = {
-    "userID": userId
+    userID: userId,
   };
 
   const requestOptions = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(inData)
+    body: JSON.stringify(inData),
   };
 
   fetch(endpointUrl, requestOptions)
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       console.log(data);
       createTable(data);
     })
-    .catch(error => {
-      console.error('Fetch error:', error);
+    .catch((error) => {
+      console.error("Fetch error:", error);
     });
 }
 
 function createTable(data) {
-  const resultContainer = document.getElementById('result-container');
+  const resultContainer = document.getElementById("result-container");
 
-  if (data.hasOwnProperty('results')) {
+  if (data.hasOwnProperty("results")) {
     const resultData = data.results;
 
     // create table if data exists
     if (resultData.length > 0) {
-      const table = document.createElement('table');
-      table.classList.add('custom-table');
+      const table = document.createElement("table");
+      table.classList.add("custom-table");
 
       // create headers for each column
       const headerRow = table.insertRow(0);
       const keys = Object.keys(resultData[0]);
-      keys.forEach(key => {
-        if (key !== 'UserID' && key !== 'ID') {
-          const th = document.createElement('th');
+      keys.forEach((key) => {
+        if (key !== "UserID" && key !== "ID") {
+          const th = document.createElement("th");
           th.textContent = key;
           headerRow.appendChild(th);
         }
       });
-      const additionalTh = document.createElement('th');
+      const additionalTh = document.createElement("th");
       headerRow.appendChild(additionalTh);
 
       // insert data by rows into table
-      resultData.forEach(item => {
+      resultData.forEach((item) => {
         const row = table.insertRow();
-        row.classList.add('table-row');
-        keys.forEach(key => {
-          if (key !== 'UserID' && key !== 'ID') {
+        row.classList.add("table-row");
+        keys.forEach((key) => {
+          if (key !== "UserID" && key !== "ID") {
             const cell = row.insertCell();
             cell.textContent = item[key];
           }
         });
 
         // styling for delete & update buttons
-        const deleteButton = document.createElement('img');
-        deleteButton.src = '../images/delete.png';
+        const deleteButton = document.createElement("img");
+        deleteButton.src = "../images/delete.png";
         deleteButton.width = 40;
         deleteButton.height = 40;
-        deleteButton.classList.add('delete-button');
-        deleteButton.style.opacity = '0';
-        deleteButton.addEventListener('click', () => {
-          console.log('Delete button clicked for', item);
+        deleteButton.classList.add("delete-button");
+        deleteButton.style.opacity = "0";
+        deleteButton.addEventListener("click", () => {
+          console.log("Delete button clicked for", item);
           doDelete(item);
         });
-        const updateButton = document.createElement('img');
-        updateButton.src = '../images/update.png'; 
-        updateButton.width = 40; 
+        const updateButton = document.createElement("img");
+        updateButton.src = "../images/update.png";
+        updateButton.width = 40;
         updateButton.height = 40;
-        updateButton.classList.add('update-button');
-        updateButton.style.opacity = '0'; 
-        updateButton.addEventListener('click', () => {
-          console.log('Update button clicked for', item);
+        updateButton.classList.add("update-button");
+        updateButton.style.opacity = "0";
+        updateButton.addEventListener("click", () => {
+          console.log("Update button clicked for", item);
           doUpdate(item);
         });
 
         // Hover event listeners make buttons appear and disappear
-        row.addEventListener('mouseenter', () => {
-          deleteButton.style.opacity = '1'; 
-          updateButton.style.opacity = '1'; 
+        row.addEventListener("mouseenter", () => {
+          deleteButton.style.opacity = "1";
+          updateButton.style.opacity = "1";
         });
-        row.addEventListener('mouseleave', () => {
-          deleteButton.style.opacity = '0';
-          updateButton.style.opacity = '0'; 
+        row.addEventListener("mouseleave", () => {
+          deleteButton.style.opacity = "0";
+          updateButton.style.opacity = "0";
         });
 
         row.appendChild(deleteButton);
         row.appendChild(updateButton);
       });
 
-      resultContainer.innerHTML = '';
+      resultContainer.innerHTML = "";
       resultContainer.appendChild(table);
     } else {
-      resultContainer.textContent = 'No data to display.';
+      resultContainer.textContent = "No data to display.";
     }
   } else {
-    resultContainer.textContent = 'Error: Data format is incorrect.';
+    resultContainer.textContent = "Error: Data format is incorrect.";
   }
 }
 
@@ -255,49 +259,60 @@ function doCreate() {
   let lastname = document.getElementById("lastName").value;
   let phone = document.getElementById("phone").value;
   let email = document.getElementById("email").value;
-  
+
   console.log("Adding contact with info: " + firstname + " " + lastname);
-  
-  let url = urlBase + 'LAMPAPI/AddContact.' + extension;
-  let tmp = {firstname: firstname, lastname: lastname, phone: phone, email: email, userId: userId};
+
+  let url = urlBase + "LAMPAPI/AddContact." + extension;
+  let tmp = {
+    firstname: firstname,
+    lastname: lastname,
+    phone: phone,
+    email: email,
+    userId: userId,
+  };
   let jsonPayload = JSON.stringify(tmp);
-  
+
   let xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-  
+
   try {
-      xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          console.log('A contact has been created.');
-          fetchContacts();
-        }
-      };
-      xhr.send(jsonPayload);
-    } catch (err) {
-      console.log(err.message);
-    }
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log("A contact has been created.");
+        fetchContacts();
+      }
+    };
+    xhr.send(jsonPayload);
+  } catch (err) {
+    console.log(err.message);
+  }
 }
 
 function doDelete(data) {
   // console.log(ID);
-  
-  let delete_check = confirm('Are you sure you want to delete ' + data['FirstName'] + ' ' + data['LastName'] + '?');
-  
+
+  let delete_check = confirm(
+    "Are you sure you want to delete " +
+      data["FirstName"] +
+      " " +
+      data["LastName"] +
+      "?"
+  );
+
   if (delete_check === true) {
-  
-    let tmp = {id: data['ID']};
-    let url = urlBase + 'LAMPAPI/DeleteContact.' + extension;
+    let tmp = { id: data["ID"] };
+    let url = urlBase + "LAMPAPI/DeleteContact." + extension;
     let jsonPayload = JSON.stringify(tmp);
-  
+
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-  
+
     try {
       xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          console.log('A contact has been deleted.');
+          console.log("A contact has been deleted.");
           fetchContacts();
         }
       };
@@ -305,58 +320,54 @@ function doDelete(data) {
     } catch (err) {
       console.log(err.message);
     }
+  } else {
+    alert("Deletion Canceled");
   }
-  else {
-    alert('Deletion Canceled');
-  }
-  
 }
 
 function doSearch() {
-  const endpointUrl = 'http://galacticrolodex.com/LAMPAPI/SearchContact.php';
-  
+  const endpointUrl = "http://galacticrolodex.com/LAMPAPI/SearchContact.php";
+
   let keyword = document.getElementById("search").value;
-  
+
   const inData = {
     keyword: keyword,
-    userID: userId
+    userID: userId,
   };
 
   const requestOptions = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(inData)
+    body: JSON.stringify(inData),
   };
 
   fetch(endpointUrl, requestOptions)
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       console.log(data);
       createTable(data);
     })
-    .catch(error => {
-      console.error('Fetch error:', error);
+    .catch((error) => {
+      console.error("Fetch error:", error);
     });
 }
 
 function doUpdate(data) {
-
   openUpdatePopup();
-  
+
   document.getElementById("updatefirstName").value = data["FirstName"];
   document.getElementById("updatelastName").value = data["LastName"];
   document.getElementById("updatephone").value = data["Phone"];
   document.getElementById("updateemail").value = data["Email"];
-  
+
   id = data["ID"];
-  
 }
 
 function saveUpdate(data) {
@@ -364,26 +375,33 @@ function saveUpdate(data) {
   let lastname = document.getElementById("updatelastName").value;
   let phone = document.getElementById("updatephone").value;
   let email = document.getElementById("updateemail").value;
-  
-  let url = urlBase + 'LAMPAPI/UpdateContact.' + extension;
-  let tmp = {userID: userId, firstName: firstname, lastName: lastname, phone: phone, email: email, id: id};
+
+  let url = urlBase + "LAMPAPI/UpdateContact." + extension;
+  let tmp = {
+    userID: userId,
+    firstName: firstname,
+    lastName: lastname,
+    phone: phone,
+    email: email,
+    id: id,
+  };
   let jsonPayload = JSON.stringify(tmp);
-  
+
   let xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-  
+
   try {
-      xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          console.log('A contact has been updated.');
-          fetchContacts();
-        }
-      };
-      xhr.send(jsonPayload);
-    } catch (err) {
-      console.log(err.message);
-    }
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log("A contact has been updated.");
+        fetchContacts();
+      }
+    };
+    xhr.send(jsonPayload);
+  } catch (err) {
+    console.log(err.message);
+  }
 }
 
 function openCreatePopup() {
@@ -414,4 +432,14 @@ function closeUpdatePopup() {
   var overlay = document.getElementById("overlay");
   modal.style.display = "none";
   overlay.style.display = "none";
+}
+
+//log out function for contact page
+function doLogout() {
+  userId = 0;
+  firstName = "";
+  lastName = "";
+
+  document.cookie = "firstName= ; expires = Thu, 01 Jan 1970";
+  window.location.href = "index.html";
 }
