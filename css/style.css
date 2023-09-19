@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: medium;
+}
+
+.bs-example {
+  margin-top: 15%;
+}
+
+.titletext {
+  color: white;
+  font-size: large;
+}
+
+@media (max-width: 600px) {
+  .bs-example {
+    margin-top: 50vw;
+  }
+}
+
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}

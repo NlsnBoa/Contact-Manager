@@ -1,0 +1,80 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: medium;
+}
+
+body {
+  background-image: url("../images/astronaut.png");
+  background-size: 150%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 90% 80%;
+}
+
+.box {
+  box-sizing: content-box;
+  margin-left: 50%;
+  height: 100%;
+  background-color: hsl(0, 0%, 100%, 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-container {
+  text-align: center;
+}
+
+.text-center {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.heading-sentence {
+  color: #000;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.login-to-your-account-sentece {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+}
+
+/* Fix margin issue with nav bar */
+.navbar {
+  margin-bottom: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Fix horizontal scroll issue */
+* {
+  overflow-x: hidden;
+}
+
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 50%;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}

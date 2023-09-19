@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Files -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/loginform.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JS  -->
+    <script src="./js/code.js"></script>
+    <script src="./js/md5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1c8222ee2c.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon3.ico" type="image/x-icon" />
+
+    <!-- Title -->
+    <title>Contact Manager</title>
+  </head>
+
+  <body>
+    <!-- The body content -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">Group 19</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="./index.html">Home</a></li>
+            <li class="active"><a href="./login.html">Log in</a></li>
+            <li><a href="./register.html">Sign up</a></li>
+            <li><a href="./aboutus.html">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <video
+      id="background-video"
+      autoplay
+      loop
+      muted
+      poster="images/astronautzoompic.png"
+      >
+      <source
+        src="images/astronautzoomed.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <div class="box">
+
+      <div class="form-container">
+      
+        <img src="images/ufc_icon.png" alt="logo" style="width: 185px" />
+        <h4 class="heading-sentence">We are Group 19</h4>
+        <form>
+          <p class="login-to-your-account-sentece">Please log in your account</p>
+  
+          <div class="container">
+            <label style="text-align: left;" for="login"><b>Username</b></label>
+            <br />
+            <input
+              type="text"
+              id="loginName"
+              placeholder="Enter Username"
+              name="login"
+              required
+            />
+            <br />
+            <label style="padding-top: 20px; text-align: left;" for="password"
+              ><b>Password</b></label
+            >
+            <br />
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter Password"
+              name="password"
+              required
+            />
+  
+            <br />
+            <button
+              style="width: 30%"
+              type="button"
+              onclick="doLogin();"
+            >
+              Log in
+            </button>
+            <div class="text" id="loginResult" style="color: red"></div>
+            <br />
+  
+            <div>
+              <p style="display: inline; margin-right: 15px">
+                Don't have an account?
+              </p>
+              <a href="./register.html" style="display: inline">Create one</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

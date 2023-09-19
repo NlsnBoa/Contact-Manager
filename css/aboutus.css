@@ -1,0 +1,97 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: medium;
+}
+
+body {
+  background-image: url(../images/tempbackground5.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 90% 80%;
+  height: 100vh;
+}
+
+.body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    z-index: -1;
+    transform: scale(1.05);
+}
+
+.box {
+  box-sizing: border-box;
+  margin-left: 50%;
+  height: 100%;
+  background-color: hsl(0, 0%, 100%, 50%);
+}
+
+.titletext {
+  margin-top: 40px;
+  color: white;
+  font-size: large;
+}
+
+.text-center {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+}
+.grid-container-top {
+  display: flex;
+  margin-top: 150px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.grid-container-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  grid-template-columns: 50% 50%;
+  margin-top: 80px;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+}
+
+.grid-photo {
+  color: white;
+  text-align: center;
+  font-size: 16pt;
+}
+
+.grid-photo img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 200px;
+}
+.grid-photo img:hover {
+  color: #111;
+  background-color: rgba(24, 123, 204, 0.3);
+  box-shadow: 0 0 100px rgb(133, 195, 245);
+  border-radius: 50%;
+}
+
+/* Fix margin issue with nav bar */
+.navbar {
+  margin-bottom: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
