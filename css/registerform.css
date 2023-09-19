@@ -3,11 +3,9 @@ input[type="password"] {
   width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
+  /*display: inline-block;*/
   border: 1px solid #ccc;
   box-sizing: border-box;
-  position: relative;
-  left: 26.5%;
 }
 
 button {
@@ -47,4 +45,16 @@ img.avatar {
 span.psw {
   float: right;
   padding-top: 16px;
+}
+
+.input-field:valid {
+    border: 2px solid #009345;
+}
+
+.input-field:invalid {
+    border: 2px solid red;
+}
+
+.input-field:invalid:required {
+    background-image: white;
 }

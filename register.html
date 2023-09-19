@@ -78,100 +78,136 @@
 
     <!-- The sign up form content -->
     <div class="box">
-      <div class="text-center">
+
+      <div class="form-container">
+      
         <img src="./images/ufc_icon.png" alt="logo" style="width: 185px" />
         <h4 class="heading-sentence">We are Group 19</h4>
-      </div>
-
-      <form>
-        <p class="create-a-new-acc-sentece">Create a new account</p>
-
-        <div class="container">
-          <label style="padding-left: 26.5%" for="firstname"
-            ><b>First Name</b></label
-          >
-          <br />
-          <input
-            type="text"
-            id="firstName"
-            placeholder="Enter First Name"
-            name="firstname"
-            required
-          />
-          <br />
-          <label
-            style="padding-top: 20px; padding-left: 26.5%"
-            for="lastname"
-            style="padding-top: 20px"
-            ><b>Last Name</b></label
-          >
-          <br />
-          <input
-            type="text"
-            id="lastName"
-            placeholder="Enter Last Name"
-            name="lastname"
-            required
-          />
-          <br />
-          <label
-            style="padding-top: 20px; padding-left: 26.5%"
-            for="login"
-            style="padding-top: 20px"
-            ><b>Username</b></label
-          >
-          <br />
-          <input
-            type="text"
-            id="loginName"
-            placeholder="Enter Username"
-            name="login"
-            required
-            pattern="(?=.*[a-zA-Z])[a-zA-Z0-9]{3,18}"
-            title="Must be between 3-18 characters and must contain at least one letter"
-          />
-          <br />
-          <label
-            style="padding-top: 20px; padding-left: 26.5%"
-            for="password"
-            style="padding-top: 20px"
-            ><b>Password</b></label
-          >
-          <br />
-          <input
-            type="password"
-            id="loginPassword"
-            placeholder="Enter Password"
-            name="password"
-            required
-            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}"
-            title="Must be between 8-32 characters and must contain at least one number and one special character"
-          />
-          <br />
-          <button
-            style="position: relative; left: 26.5%; width: 30%"
-            type="submit"
-            onclick="doRegister()"
-          >
-            Sign up
-          </button>
-          <div class="text" id="loginResult"></div>
-          <br />
-
-          <div>
-            <p style="padding-left: 26.5%; display: inline; margin-right: 15px">
-              Have an account?
-            </p>
-            <a href="./login.html" style="display: inline">Log in</a>
+      
+        <form id="wholeForm">
+          <p class="create-a-new-acc-sentece">Create a new account</p>
+  
+          <div class="container">
+            <label style="text-align: center;" for="firstname"
+              ><b>First Name</b></label
+            >
+            <br />
+            <input
+              type="text"
+              id="firstName"
+              placeholder="Enter First Name"
+              name="firstname"
+              class="input-field"
+              required
+            />
+            <br />
+            <label
+              style="padding-top: 20px;"
+              for="lastname"
+              style="padding-top: 20px"
+              ><b>Last Name</b></label
+            >
+            <br />
+            <input
+              type="text"
+              id="lastName"
+              placeholder="Enter Last Name"
+              name="lastname"
+              class="input-field"
+              required
+            />
+            <br />
+            <label
+              style="padding-top: 20px;"
+              for="login"
+              style="padding-top: 20px"
+              ><b>Username</b></label
+            >
+            <br />
+            <input
+              type="text"
+              id="loginName"
+              placeholder="Enter Username"
+              name="login"
+              class="input-field"
+              required
+              pattern="(?=.*[a-zA-Z])[a-zA-Z0-9]{3,18}"
+              title="Must be between 3-18 characters and must contain at least one letter"
+            />
+            <br />
+            <label
+              style="padding-top: 20px;"
+              for="password"
+              style="padding-top: 20px"
+              ><b>Password</b></label
+            >
+            <br />
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter Password"
+              name="password"
+              class="input-field"
+              required
+              pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}"
+              title="Must be between 8-32 characters and must contain at least one number and one special character"
+            />
+            <br />
+            <button
+              style="width: 30%"
+              type="submit"
+              onclick="doRegister()"
+            >
+              Sign up
+            </button>
+            <div class="text" id="loginResult" style="color: red"></div>
+            <br />
+  
+            <div>
+              <p style="display: inline; font-weight: 200;">
+                Have an account?
+              </p>
+              <a href="./login.html" style="display: inline">Log in</a>
+            </div>
+            
+            <!--HTML fo username criteria message-->
+            <div id="explanationUser" style="margin-top: 10px;">
+              <h4 style="color: red; font-weight:100">
+                Username must contain the following:
+              </h4>
+              <p id="userLett" class="invalid" style="">
+                At least one letter
+              </p>
+              <p id="userLen" class="invalid" style="">
+                3 to 18 characters
+              </p>
+              <h4 style="color: rgb(255, 72, 0)">
+                Username may contain the following:
+              </h4>
+              <p id="userNum" class="opt" style="">Numbers</p>
+              <p id="userUnd" class="opt" style="">
+                Underscores
+              </p>
+              <p id="userHyp" class="opt" style="">Hyphens</p>
+            </div>
+            
+            <!--HTML fo password criteria message-->
+            <div id="explanation" style="margin-top: 10px;">
+              <h4 style="color: red">Password must contain the following:</h3>
+              <p id="passLen" class="invalid" style="">8 to 32 characters</p>
+              <p id="passLett" class="invalid" style="">At least one letter</p>
+              <p id="passNum" class="invalid" style="">At least one number</p>
+              <p id="passSpec" class="invalid" style="">At least one special character</p>
+            </div>
           </div>
-        </div>
-      </form>
-
+        </form>
+      </div>
+      
       <!--code for username criteria message-->
       <script>
         let fNameField = document.getElementById("firstName");
         let lNameField = document.getElementById("lastName");
-        let userform = document.getElementById("username");
+        let userform = document.getElementById("loginName");
         let totalform = document.getElementById("wholeForm");
         let numInput = document.getElementById("userNum");
         let lettInput = document.getElementById("userLett");
@@ -188,19 +224,19 @@
           totalform.style.minHeight = "360.001px";
         };
 
-        //password message displays
+        //username message displays
         userform.onfocus = function () {
           document.getElementById("explanationUser").style.display = "block";
           totalform.style.minHeight = "675px";
         };
 
-        //password message goes away
+        //username message goes away
         userform.onblur = function () {
           document.getElementById("explanationUser").style.display = "none";
           totalform.style.minHeight = "360px";
         };
 
-        //password validation
+        //username validation
         userform.onkeyup = function () {
           var nums = /[0-9]/g;
           var lett = /[a-zA-Z]/g;
@@ -253,9 +289,10 @@
           }
         };
       </script>
+
       <!--code for password criteria message-->
       <script>
-        let passform = document.getElementById("password");
+        let passform = document.getElementById("loginPassword");
         let pNumInput = document.getElementById("passNum");
         let pLettInput = document.getElementById("passLett");
         let pSpecInput = document.getElementById("passSpec");

@@ -78,56 +78,57 @@
     </video>
 
     <div class="box">
-      <div class="text-center">
+
+      <div class="form-container">
+      
         <img src="images/ufc_icon.png" alt="logo" style="width: 185px" />
         <h4 class="heading-sentence">We are Group 19</h4>
-      </div>
-
-      <form>
-        <p class="login-to-your-account-sentece">Please log in your account</p>
-
-        <div class="container">
-          <label style="padding-left: 26.5%" for="login"><b>Username</b></label>
-          <br />
-          <input
-            type="text"
-            id="loginName"
-            placeholder="Enter Username"
-            name="login"
-            required
-          />
-          <br />
-          <label style="padding-top: 20px; padding-left: 26.5%" for="password"
-            ><b>Password</b></label
-          >
-          <br />
-          <input
-            type="password"
-            id="loginPassword"
-            placeholder="Enter Password"
-            name="password"
-            required
-          />
-
-          <br />
-          <button
-            style="position: relative; left: 26.5%; width: 30%"
-            type="button"
-            onclick="doLogin();"
-          >
-            Log in
-          </button>
-          <div class="text" id="loginResult"></div>
-          <br />
-
-          <div>
-            <p style="padding-left: 26.5%; display: inline; margin-right: 15px">
-              Don't have an account?
-            </p>
-            <a href="./register.html" style="display: inline">Create one</a>
+        <form>
+          <p class="login-to-your-account-sentece">Please log in your account</p>
+  
+          <div class="container">
+            <label style="text-align: left;" for="login"><b>Username</b></label>
+            <br />
+            <input
+              type="text"
+              id="loginName"
+              placeholder="Enter Username"
+              name="login"
+              required
+            />
+            <br />
+            <label style="padding-top: 20px; text-align: left;" for="password"
+              ><b>Password</b></label
+            >
+            <br />
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter Password"
+              name="password"
+              required
+            />
+  
+            <br />
+            <button
+              style="width: 30%"
+              type="button"
+              onclick="doLogin();"
+            >
+              Log in
+            </button>
+            <div class="text" id="loginResult" style="color: red"></div>
+            <br />
+  
+            <div>
+              <p style="display: inline; margin-right: 15px">
+                Don't have an account?
+              </p>
+              <a href="./register.html" style="display: inline">Create one</a>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </body>
 </html>

@@ -21,6 +21,15 @@ body {
   margin-left: 50%;
   height: 100%;
   background-color: hsl(0, 0%, 100%, 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-container {
+  text-align: center;
 }
 
 .text-center {
@@ -41,12 +50,16 @@ body {
   font-size: 20px;
   font-style: normal;
   line-height: normal;
-  padding-left: 33%;
 }
 
 /* Fix margin issue with nav bar */
 .navbar {
   margin-bottom: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 /* Fix horizontal scroll issue */
